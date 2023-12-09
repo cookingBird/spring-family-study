@@ -1,0 +1,2 @@
+INSERT INTO FOO (BAR) VALUES ( 'aaa');
+INSERT INTO FOO (BAR) VALUES ( 'bbb');
