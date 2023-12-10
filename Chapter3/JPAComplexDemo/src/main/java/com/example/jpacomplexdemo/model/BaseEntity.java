@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
+
 @MappedSuperclass
 @Data
 @NoArgsConstructor

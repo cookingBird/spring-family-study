@@ -7,6 +7,7 @@ import org.joda.money.Money;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 
 @EqualsAndHashCode(callSuper = true)
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Coffee extends BaseEntity {
+public class Coffee extends BaseEntity implements Serializable {
 
     private String name;
 

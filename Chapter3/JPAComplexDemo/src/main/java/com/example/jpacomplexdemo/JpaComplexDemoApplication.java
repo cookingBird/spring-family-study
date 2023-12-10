@@ -18,6 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Collections;
@@ -40,6 +41,7 @@ public class JpaComplexDemoApplication implements ApplicationRunner {
     }
 
     @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
         initOrders();
         findOrders();
@@ -88,7 +90,8 @@ public class JpaComplexDemoApplication implements ApplicationRunner {
 
         // 不开启事务会因为没Session而报LazyInitializationException
         list.forEach(o -> {
-            log.info("Order {}", o.getId());
+            log.info("Order id: {}", o.getId());
+            log.info("Order state: {}", o.getState());
             o.getItems().forEach(i -> log.info("  Item {}", i));
         });
 
